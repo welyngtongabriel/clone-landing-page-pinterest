@@ -1,0 +1,13 @@
+.animate-before {
+    transform: translateY(40px); // direção vertical de movimento de baixo para cima
+    opacity: 0; // item com opacidade ao inicar pagina
+    pointer-events: none; // não clicar no item
+}
+
+.animate-after {
+    transform: translateY(-40px); // direção vertical da ultima posição para cima
+    opacity: 0; // finalizar com opcacidade
+    pointer-events: none;
+}
+
+// Depois defina nos estilos dos elementos que serã animados um "transition: Ns"

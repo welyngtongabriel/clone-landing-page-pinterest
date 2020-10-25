@@ -1,0 +1,19 @@
+
+// Adicione "_underline.scss" no nome para não gerar arquivos de estilo
+
+* {
+    // resetar css
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+*, button, input {
+    // para todos os elementos "button" e "input"
+    font-family: -apple-system, Ubuntu, Arial, sans-serif;
+}  
+
+*, li {
+    // para todos os itens de listas
+    list-style: none; // remove as "bolinhas" dos itens de listas
+}

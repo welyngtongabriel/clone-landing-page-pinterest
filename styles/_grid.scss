@@ -1,0 +1,81 @@
+// organize aqui as definições de estilos na ordem em que aparecem no HTML, assim fica mais fácil localizar
+
+.grid-container {
+    display: flex;
+    flex-direction: column; // formato de colunas
+    align-items: center;
+    overflow: hidden;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 252px); // define número e medida das colunas
+
+    // ↓ definições iniciais padrões do grid, será alterada pelo "active" no arquivo .js
+    visibility: hidden;
+    pointer-events: none;
+    max-height: 0px; // não consome espaço nenhum na página
+
+    // ↓ quando algum elemnto obter a classe active...
+    &.active {
+        max-height: unset; // remove a max-height anterior
+        visibility: visible;
+        pointer-events: auto; // retorna aos pointer-events anteriores
+    }
+
+}
+
+.column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: 1s; // sem isso seria uma animação de "corte seco"
+
+    // Definindo o efeito de escada
+    // Para o item/coluna...
+    &:nth-child(1){
+        margin-top: 0px;
+        // ↓ tempo de atraso (vinda do arquivo de variaveis * x)
+        transition-delay: $columns-transition-delay * 0;
+    }
+    &:nth-child(2){
+        margin-top: 160px;
+        transition-delay: $columns-transition-delay * 1;
+    }
+    &:nth-child(3){
+        margin-top: 320px;
+        transition-delay: $columns-transition-delay * 2;
+    }
+    &:nth-child(4){
+        margin-top: 480px;
+        transition-delay: $columns-transition-delay * 3;
+    }
+    &:nth-child(5){
+        margin-top: 320px;
+        transition-delay: $columns-transition-delay * 4;
+    }
+    &:nth-child(6){
+        margin-top: 160px;
+        transition-delay: $columns-transition-delay * 5;
+    }
+    &:nth-child(7){
+        margin-top: 0px;
+        transition-delay: $columns-transition-delay * 6;
+    }
+
+
+}
+
+.item {
+    width: 236px; // um pouco menor que o tamnho da coluna, "separa as colunas"
+    height: 350px;
+    background: $red; // usando váriavel
+    border-radius: 10px;
+}
+
+.item:not(:first-child) {
+    // tudo que não for o primeiro, separa com um margin-top
+    margin-top: 16px;
+}

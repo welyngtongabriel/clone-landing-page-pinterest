@@ -1,0 +1,60 @@
+header {
+  display: flex; // Coloca os elementos filhos lado a lado.
+  justify-content: space-between; // separa os elementos igualmente ou opostamente
+  align-items: center;
+
+  // cima, direita, baixo, esquerda -> sentido relógio
+  padding: 15px 28px 15px 28px;
+
+  h3 {
+    color: $red;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      li {
+        padding: 16px;
+        a {
+          text-decoration: none;
+          font-size: 16px;
+          color: $black;
+          font-weight: 700;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      margin-left: 24px; // margem do grupo de botões
+      button {
+        font-size: 16px;
+        font-weight: 700;
+        padding: 11px 12px;
+
+        border-radius: 24px;
+        border: none;
+
+        // alinhando tudo horizontal e verticalmente
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .login {
+        color: $white;
+        background: $red;
+      }
+      .signup {
+          margin-left: 16px; // separando do botão ao lado
+          background: $gray-ligth;
+      }
+    }
+  }
+}

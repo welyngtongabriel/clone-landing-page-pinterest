@@ -1,0 +1,10 @@
+// Ao criar este arquivo .scss (Sass) clique em "watch Sass" no rodapé do vscode...
+// então será criado os arquivos de estilo ".css.map" e ".css" já convertidos e habilitados para outros navegadores.
+ 
+@import './_reset.scss';
+@import './_variables.scss';
+@import './_animations.scss';
+
+@import './_header.scss';
+@import './_heading.scss';
+@import './_grid.scss'; 
