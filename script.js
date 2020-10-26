@@ -1,6 +1,16 @@
 const grids = document.querySelectorAll(".grid");
 const headings = document.querySelectorAll(".heading .wrapper .text");
 
+function removeAnimations(gridColumns, heading) {
+  // para todos os elemntos, após acionado remove classe de animação para trocar
+  gridColumns.forEach((elemento) => {
+    elemento.classList.remove("animate-enter", "animate-exit");
+    // ↑ para garantir que remova todos as classes de animação indicadas 9se houver)
+  });
+
+  heading.classList.remove("animate-enter", "animate-exit");
+}
+
 function enterScreen(index) {
   const grid = grids[index]; // obtém o index selecionado pelo usuário
   const heading = headings[index];
@@ -9,32 +19,34 @@ function enterScreen(index) {
   // adicionar atribuir "active" a lista de classe do elemento
   grid.classList.add("active"); // fará com que a "tela" apareça conforme o css
 
-  // para todos os elemntos, após acionado remove classe de animação para trocar
-  gridColumns.forEach((elemento) => {
-    elemento.classList.remove("animate-before", "animate-after");
-    // ↑ para garantir que remova todos as classes de animação
-  });
-
-  heading.classList.remove("animate-before", "animate-after");
+  removeAnimations(gridColumns, heading);
 }
 
-// ↓ "exitDelay" paara esperar um tempo até a p´roxima frase entrar/aparecer
 function exitScreen(index, exitDelay) {
   const grid = grids[index];
   const heading = headings[index];
   const gridColumns = grid.querySelectorAll(".column");
 
-  // para todos os elemntos adiciona a nova classe de animação
+  // para todos os elementos adiciona a nova classe de animação
   gridColumns.forEach((elemento) => {
-    elemento.classList.add("animate-after");
+    elemento.classList.add("animate-exit");
   });
 
-  heading.classList.add("animate-after");
+  heading.classList.add("animate-exit");
 
   // definir tempo de espera até sair e remove a classe active
   setTimeout(() => {
     grid.classList.remove("active");
+
+    removeAnimations(gridColumns, heading);
+
+    gridColumns.forEach((elemento) => {
+      elemento.classList.add("animate-enter");
+    });
+
+    heading.classList.add("animate-enter");
   }, exitDelay);
+  // * ↑ "exitDelay" para esperar um tempo até a próxima frase entrar/aparecer
 }
 
 // definir um ciclo de animação
