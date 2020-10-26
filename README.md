@@ -6,7 +6,7 @@
 
 ## DESÁFIO: Agora faça você mesmo
 
-1. Modifique as animações para que executem o movimento apenas de baxio para cima.
+1. Modifique as animações para que executem o movimento apenas de baxio para cima. -> **CONCLUÍDO**
 
 2. Coloque imagens no lugar das formas vemelhas
 
