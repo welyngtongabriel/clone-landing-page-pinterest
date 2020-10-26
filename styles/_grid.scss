@@ -16,10 +16,10 @@
     pointer-events: none;
     max-height: 0px; // não consome espaço nenhum na página
 
-    // ↓ quando algum elemnto obter a classe active...
+    // ↓ quando algum elemento obter a classe active...
     &.active {
-        max-height: unset; // remove a max-height anterior
         visibility: visible;
+        max-height: unset; // remove a max-height anterior
         pointer-events: auto; // retorna aos pointer-events anteriores
     }
 
@@ -31,7 +31,7 @@
     flex-direction: column;
     align-items: center;
 
-    transition: 1s; // sem isso seria uma animação de "corte seco"
+    transition: $time-transition; // sem isso seria uma animação de "corte seco"
 
     // Definindo o efeito de escada
     // Para o item/coluna...
